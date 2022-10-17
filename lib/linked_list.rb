@@ -45,6 +45,17 @@ class LinkedList
     tmp_node
   end
 
+  def contains?(value)
+    return if value.nil?
+
+    current = @head
+    size.times do
+      return true if current.value == value
+      current = current.next_node
+    end
+    return false
+  end
+
   def empty?
     head.nil?
   end

@@ -35,7 +35,7 @@ print_test("3", "size", "#{test.size}")
 test.append('fifth element, index 4')
 notify("Added a fifth element")
 
-print_test("4.1", "at(5)", "#{test.at(5)} == nill")
+print_test("4.1", "at(5)", "#{test.at(5)} == nil")
 print_test("4.2", "at(4)", "#{test.at(4)}")
 
 test.append("This will be popped")
@@ -45,11 +45,15 @@ print_test("5.1", "pop", "#{test.pop}")
 
 notify("Popped last element")
 
-print_test("5.2", "at(5)", "#{test.at(5)} == nill")
+print_test("5.2", "at(5)", "#{test.at(5)} == nil")
 print_test("5.3", "tail", "#{test.tail}")
 
-# puts test.contains?('test5')
-# puts test.contains?('test3')
+print_test("6.1", "contains?(nil)", "#{test.contains?(nil)} == nil")
+print_test("6.2", "contains?(\"fifth element, index 4\")",
+           "#{test.contains?('fifth element, index 4')}")
+print_test("6.2", "contains?(\"fifth element, index 5\")",
+           "#{test.contains?('fifth element, index 5')}")
+
 # p test.find('test2')
 # p test.find('test5')
 # test.append('post-pop')
@@ -64,4 +68,4 @@ print_test("5.3", "tail", "#{test.tail}")
 # puts test
 # test.remove_at(0)
 # puts test
-puts "\n\tEND OF TESTS\n\n"
+notify("END OF TESTS")
