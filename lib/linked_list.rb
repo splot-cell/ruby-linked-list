@@ -27,6 +27,14 @@ class LinkedList
     @size += 1
   end
 
+  def at(index)
+    return nil if index > @size
+
+    found = @head
+    index.times { found = found.next_node }
+    found
+  end
+
   def empty?
     head.nil?
   end
