@@ -18,6 +18,17 @@ class LinkedList
       @tail = next_node
   end
 
+  def prepend(value)
+    node = Node.new(value)
+    if empty?
+      @head = node
+      @tail = node
+    else
+      node.next_node = @head
+      @head = node
+    end
+  end
+
   def empty?
     head.nil?
   end
