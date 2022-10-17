@@ -10,27 +10,29 @@ class LinkedList
 
   def append(value)
     node = Node.new(value)
-    if empty?
-      @head = node
-      @tail = node
-    else
-      @tail.next_node = node
-      @tail = next_node
+    return initalize_with_node(node) if empty?
+
+    @tail.next_node = node
+    @tail = next_node
   end
 
   def prepend(value)
     node = Node.new(value)
-    if empty?
-      @head = node
-      @tail = node
-    else
-      node.next_node = @head
-      @head = node
-    end
+    return initalize_with_node(node) if empty?
+
+    node.next_node = @head
+    @head = node
   end
 
   def empty?
     head.nil?
+  end
+
+  private:
+
+  def initialize_with_node(node)
+    @head = node
+    @tail = node
   end
 end
 
