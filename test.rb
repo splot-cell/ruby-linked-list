@@ -2,39 +2,51 @@
 
 require_relative "./lib/linked_list"
 
-puts "\n\n\tRUNNING TESTS\n\n"
+def notify(msg)
+  puts "\n*\t#{msg}\n\n"
+end
+
+def print_test(num, desc, output)
+  if num.length <= 1
+    puts "Test #{num}\t\t#{desc}:\t#{output}"
+  else
+    puts "Test #{num}\t#{desc}:\t#{output}"
+  end
+end
+
+notify("RUNNING TESTS")
 
 test = LinkedList.new
-puts "*\tInitialized test object\n\n"
+notify("Initialized test object")
 
 test.append('element1')
 test.append('element2')
 test.append('current_tail')
-puts "\n*\tAdded three elements\n\n"
+notify("Added three elements")
 
-puts "Test 1\t\ttail:\t#{test.tail}"
+print_test("1", "tail", "#{test.tail}")
 
 test.prepend('current_head')
-puts "\n*\tAdded a fourth element\n\n"
+notify("Added a fourth element")
 
-puts "Test 2\t\thead:\t#{test.head}"
-puts "Test 3\t\tsize:\t#{test.size}"
+print_test("2", "head", "#{test.head}")
+print_test("3", "size", "#{test.size}")
 
 test.append('fifth element, index 4')
-puts "\n*\tAdded a fifth element\n\n"
+notify("Added a fifth element")
 
-puts "Test 4.1\tat(5):\t#{test.at(5)} == nill"
-puts "Test 4.2\tat(4):\t#{test.at(4)}"
+print_test("4.1", "at(5)", "#{test.at(5)} == nill")
+print_test("4.2", "at(4)", "#{test.at(4)}")
 
 test.append("This will be popped")
-puts "\n*\tAdded element to be popped\n\n"
+notify("Added element to be popped")
 
-puts "Test 5.1\tpop:\t#{test.pop}"
+print_test("5.1", "pop", "#{test.pop}")
 
-puts "\n*\tPopped last element\n\n"
+notify("Popped last element")
 
-puts "Test 5.2\tat(5):\t#{test.at(5)} == nill"
-puts "Test 5.3\ttail:\t#{test.tail}"
+print_test("5.2", "at(5)", "#{test.at(5)} == nill")
+print_test("5.3", "tail", "#{test.tail}")
 
 # puts test.contains?('test5')
 # puts test.contains?('test3')
