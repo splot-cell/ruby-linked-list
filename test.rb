@@ -2,14 +2,23 @@
 
 require_relative "./lib/linked_list"
 
+
+puts "\n\n\tRUNNING TESTS\n\n"
 test = LinkedList.new
-test.append('test1')
-test.append('test2')
-test.append('test3')
-p test.tail.to_s
-test.prepend('test4')
-p test.head.to_s
-p test.size
+puts "*\tInitialized test object\n\n"
+test.append('element1')
+test.append('element2')
+test.append('current_tail')
+puts "\n*\tAdded three elements\n\n"
+puts "Test 1\t\ttail:\t#{test.tail}"
+test.prepend('current_head')
+puts "\n*\tAdded a fourth element\n\n"
+puts "Test 2\t\thead:\t#{test.head}"
+puts "Test 3\t\tsize:\t#{test.size}"
+test.append('fifth element, index 4')
+puts "\n*\tAdded a fifth element\n\n"
+puts "Test 4.1\tat(5):\t#{test.at(5)} == nill"
+puts "Test 4.2\tat(4):\t#{test.at(4)}"
 # puts test.contains?('test5')
 # puts test.contains?('test3')
 # p test.find('test2')
@@ -17,9 +26,7 @@ p test.size
 # test.pop
 # test.append('post-pop')
 # test.prepend('prepend-test')
-# test.append('append-test')
 # puts test
-# p test.at(5)
 # puts test
 # test.insert_at(1, 'insert_test')
 # puts test
@@ -29,3 +36,4 @@ p test.size
 # puts test
 # test.remove_at(0)
 # puts test
+puts "\n\tEND OF TESTS\n\n"
