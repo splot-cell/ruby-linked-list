@@ -56,6 +56,15 @@ class LinkedList
     return false
   end
 
+  def find(value)
+    current = @head
+    size.times do |i|
+      return i if current.value == value
+      current = current.next_node
+    end
+    nil
+  end
+
   def empty?
     head.nil?
   end

@@ -54,6 +54,13 @@ print_test("6.2", "contains?(\"fifth element, index 4\")",
 print_test("6.2", "contains?(\"fifth element, index 5\")",
            "#{test.contains?('fifth element, index 5')}")
 
+test.append("65")
+notify("Appended element '65'")
+
+print_test("7.1", "find('65')", "#{test.find('65')} == 5")
+print_test("7.2", "find(65)", "#{test.find(65)} == nil")
+print_test("7.3", "find(nil)", "#{test.find(nil)} == nil")
+
 # p test.find('test2')
 # p test.find('test5')
 # test.append('post-pop')
