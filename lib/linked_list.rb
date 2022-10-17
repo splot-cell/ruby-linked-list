@@ -10,15 +10,15 @@ class LinkedList
 
   def append(value)
     node = Node.new(value)
-    return initalize_with_node(node) if empty?
+    return initialize_with_node(node) if empty?
 
     @tail.next_node = node
-    @tail = next_node
+    @tail = node
   end
 
   def prepend(value)
     node = Node.new(value)
-    return initalize_with_node(node) if empty?
+    return initialize_with_node(node) if empty?
 
     node.next_node = @head
     @head = node
@@ -28,7 +28,7 @@ class LinkedList
     head.nil?
   end
 
-  private:
+  private
 
   def initialize_with_node(node)
     @head = node
@@ -44,3 +44,31 @@ class Node
     @next_node = nil
   end
 end
+
+test = LinkedList.new
+test.append('test1')
+test.append('test2')
+test.append('test3')
+p test.tail
+test.prepend('test4')
+p test.head
+# p test.size
+# puts test.contains?('test5')
+# puts test.contains?('test3')
+# p test.find('test2')
+# p test.find('test5')
+# test.pop
+# test.append('post-pop')
+# test.prepend('prepend-test')
+# test.append('append-test')
+# puts test
+# p test.at(5)
+# puts test
+# test.insert_at(1, 'insert_test')
+# puts test
+# test.insert_at(0, 'insert_head_test')
+# puts test
+# test.remove_at(1)
+# puts test
+# test.remove_at(0)
+# puts test
