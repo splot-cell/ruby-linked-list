@@ -35,6 +35,16 @@ class LinkedList
     found
   end
 
+  def pop
+    return if empty?
+
+    tmp_node = @tail
+    @size -= 1
+    @tail = at(size - 1)
+    @tail.next_node = nil
+    tmp_node
+  end
+
   def empty?
     head.nil?
   end
