@@ -63,6 +63,21 @@ print_test("7.3", "find(nil)", "#{test.find(nil)} == nil")
 
 print_test("8", "to_s", "#{test}")
 
+test.insert_at('inserted at 0', 0)
+notify("Element inserted at index 0")
+
+print_test("9.1", "insert_at", "#{test}")
+
+test.insert_at('inserted at 8', 8)
+notify("Attempt insert element at index 8")
+
+print_test("9.2", "insert_at", "#{test}")
+
+test.insert_at('inserted at 3', 3)
+notify("Element inserted at index 3")
+
+print_test("9.3", "insert_at", "#{test}")
+
 # p test.find('test2')
 # p test.find('test5')
 # test.append('post-pop')

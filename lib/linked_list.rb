@@ -28,7 +28,7 @@ class LinkedList
   end
 
   def at(index)
-    return nil if index > @size
+    return nil if index > @size || index < 0
 
     found = @head
     index.times { found = found.next_node }
@@ -73,6 +73,21 @@ class LinkedList
       current = current.next_node
     end
     str.concat("nil")
+  end
+
+  def insert_at(value, index)
+    return if index > size || index < 0
+
+    new_node = Node.new(value)
+    new_node.next_node = at(index)
+
+    if index == 0
+      @head = new_node
+    else
+      at(index - 1).next_node = new_node
+    end
+
+    @size += 1
   end
 
   def empty?
