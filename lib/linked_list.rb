@@ -28,7 +28,7 @@ class LinkedList
   end
 
   def at(index)
-    return nil if index > @size || index < 0
+    return nil if index_out_of_bounds(index)
 
     found = @head
     index.times { found = found.next_node }
@@ -76,7 +76,7 @@ class LinkedList
   end
 
   def insert_at(value, index)
-    return if index > size || index < 0
+    return if index_out_of_bounds(index)
 
     new_node = Node.new(value)
     new_node.next_node = at(index)
@@ -90,6 +90,20 @@ class LinkedList
     @size += 1
   end
 
+  def remove_at(index)
+    return if index_out_of_bounds(index)
+
+    tmp_node = at(index)
+
+    if index == 0
+      @head = tmp_node.next_node
+    else
+      at(index - 1).next_node = tmp_node.next_node
+    end
+
+    @size -= 1
+  end
+
   def empty?
     head.nil?
   end
@@ -100,6 +114,10 @@ class LinkedList
     @head = node
     @tail = node
     @size += 1
+  end
+
+  def index_out_of_bounds(index)
+    index > @size || index < 0
   end
 end
 

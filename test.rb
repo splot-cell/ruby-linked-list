@@ -78,18 +78,19 @@ notify("Element inserted at index 3")
 
 print_test("9.3", "insert_at", "#{test}")
 
-# p test.find('test2')
-# p test.find('test5')
-# test.append('post-pop')
-# test.prepend('prepend-test')
-# puts test
-# puts test
-# test.insert_at(1, 'insert_test')
-# puts test
-# test.insert_at(0, 'insert_head_test')
-# puts test
-# test.remove_at(1)
-# puts test
-# test.remove_at(0)
-# puts test
+test.remove_at(0)
+notify("Element removed at index 0")
+
+print_test("10.1", "remove_at", "#{test}")
+
+test.remove_at(8)
+notify("Attempt remove element at index 8")
+
+print_test("10.2", "remove_at", "#{test}")
+
+test.remove_at(3)
+notify("Element removed at index 3")
+
+print_test("10.3", "remove_at", "#{test}")
+
 notify("END OF TESTS")
