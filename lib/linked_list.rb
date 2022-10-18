@@ -58,11 +58,21 @@ class LinkedList
 
   def find(value)
     current = @head
-    size.times do |i|
+    @size.times do |i|
       return i if current.value == value
       current = current.next_node
     end
     nil
+  end
+
+  def to_s
+    str = String.new
+    current = @head
+    @size.times do |i|
+      str.concat("(#{current}) -> ")
+      current = current.next_node
+    end
+    str.concat("nil")
   end
 
   def empty?

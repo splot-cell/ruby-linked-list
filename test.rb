@@ -61,6 +61,8 @@ print_test("7.1", "find('65')", "#{test.find('65')} == 5")
 print_test("7.2", "find(65)", "#{test.find(65)} == nil")
 print_test("7.3", "find(nil)", "#{test.find(nil)} == nil")
 
+print_test("8", "to_s", "#{test}")
+
 # p test.find('test2')
 # p test.find('test5')
 # test.append('post-pop')
